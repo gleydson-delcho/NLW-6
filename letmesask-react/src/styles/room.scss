@@ -4,21 +4,31 @@
         border-bottom: 1px solid #e2e2e2;
 
         .content {
-            max-width: 1120px;
+            max-width: 70rem;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
 
             > img {
-                max-height: 45px;
+                max-height: 2.5rem;
+            }
+
+            > div {
+                display: flex;
+                gap: 1rem;
+
+                button {
+                    height: 2.5rem;
+                    margin-left: 1rem;
+                }
             }
         }
     }
 
     main {
         flex-direction: column;
-        max-width: 800px;
+        max-width: 50rem;
         margin: 0 auto;
 
         .room-title {
@@ -42,10 +52,16 @@
                 font-weight: 500;
                 font-size: 1.4rem;
             }
+
+        }
+
+        .question-list {
+            width: 50rem;
+            margin-top: 2rem;
         }
         
         form {
-            width:880px;
+            width:50rem;
             textarea {
                 width: 100%;
                 border: 0;
