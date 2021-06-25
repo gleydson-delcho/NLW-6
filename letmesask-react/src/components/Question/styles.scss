@@ -7,6 +7,19 @@
 
     & + .question {
         margin-top: 0.4rem;
+    }    
+
+    &.highlighted {
+        background: #f4f8ff;
+        border: 1px solid #835afd;
+
+        footer .user-info span {
+            color: #29292e;
+        }
+    }
+
+    &.answered {
+        background: #dbdcdd;
     }
 
     p {
@@ -35,6 +48,11 @@
                 color: #737380;
                 font-size: 0.8rem;
             }
+        }
+
+        > div {
+            display: flex;
+            gap: 1rem;
         }
 
         button {
