@@ -8,6 +8,8 @@ import { Button } from '../components/Button';
 import { useAuth } from '../hooks/useAuth';
 import { useState } from 'react';
 import { database } from '../services/firebase';
+import { useTheme } from '../hooks/useTheme';
+import { ThemeButton } from '../components/ThemeButton';
 
 
 export function Home() {
@@ -18,6 +20,7 @@ export function Home() {
     const [roomCode, setRoomCode] = useState('');
     const { user, signInWithGoogle } = useAuth();
 
+    const { theme } = useTheme();
     // function buttonToggle() {
     //     if(isActive === false) {
     //         setIsActive(true);
@@ -60,7 +63,7 @@ export function Home() {
     }
 
     return (
-        <div id="page-auth">
+        <div id="page-auth" className={theme}>
             <aside>
                 {/* <button className="button-toggle" onClick={buttonToggle}>
                 </button> */}
@@ -70,26 +73,29 @@ export function Home() {
 
             </aside>
             <main className="main-large">
-                    <div className="main-content">
-                        <img src={logoImg} alt="Logo" />
-                        <button className="create-room" onClick={handleCreateRoom}>
-                            <img src={googleIconImg} alt="logo google" />
-                            Crie sua sala com o Google
-                        </button>
-                        <div className="separator">Ou entre em uma sala</div>
-                        <form onSubmit={handleJoinRoom}>
-                            <input
-                                type="text"
-                                placeholder="Digite o código da sala"
-                                onChange={event => setRoomCode(event.target.value)}
-                                value={roomCode}
-                            />
-                            <Button type="submit">
-                                Entrar na sala
-                            </Button>
-                        </form>
+                <div className="main-content">
+                    <div className="button-theme">
+                        <ThemeButton />
                     </div>
-                </main>
+                    <img src={logoImg} alt="Logo" />
+                    <button className="create-room" onClick={handleCreateRoom}>
+                        <img src={googleIconImg} alt="logo google" />
+                        Crie sua sala com o Google
+                    </button>
+                    <div className="separator">Ou entre em uma sala</div>
+                    <form onSubmit={handleJoinRoom}>
+                        <input
+                            type="text"
+                            placeholder="Digite o código da sala"
+                            onChange={event => setRoomCode(event.target.value)}
+                            value={roomCode}
+                        />
+                        <Button type="submit">
+                            Entrar na sala
+                        </Button>
+                    </form>
+                </div>
+            </main>
             {/* {
                 isActive ?
                 <main className={`${classToggle}`}>

@@ -7,11 +7,13 @@ import { Button } from '../components/Button';
 import { useState } from 'react';
 import { database } from '../services/firebase';
 import { useAuth } from '../hooks/useAuth';
+import { useTheme } from '../hooks/useTheme';
 
 export function NewRoom() {
 
     const history = useHistory();
     const { user } = useAuth();
+    const { theme } = useTheme()
     const [newRoom, setNewRoom] = useState('');
 
     async function handleCreateRoom(event: FormEvent) {
@@ -25,16 +27,16 @@ export function NewRoom() {
             title: newRoom,
             authorId: user?.id
         };
-
+        
         const roomRef = database.ref('rooms');
 
         const firebaseRoom = await roomRef.push(dataRoom);
 
-        history.push(`/rooms/${firebaseRoom.key}`)
+        history.push(`/admin/rooms/${firebaseRoom.key}`);
     }
 
     return(
-        <div id="page-auth">
+        <div id="page-auth" className={theme}>
             <aside>
                 <img src={illustrationImg} alt="Ilustration" />
                 <strong>Crie salas de Q&amp;A ao vivo</strong>

@@ -1,7 +1,14 @@
+body {
+    background: #333;
+}
 #page-room {
+    &.dark {
+        background: #4d4e4d88;
+    }
+
     header {
         padding: 1.5rem;
-        border-bottom: 1px solid #e2e2e2;
+        border-bottom: 1px solid #e2e2e2;        
 
         .content {
             max-width: 70rem;

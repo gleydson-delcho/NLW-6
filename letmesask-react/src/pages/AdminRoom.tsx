@@ -10,6 +10,7 @@ import { useRoom } from '../hooks/useRoom';
 import { database } from '../services/firebase';
 
 import '../styles/room.scss';
+import { useTheme } from '../hooks/useTheme';
 
 type RoomParams = {
     id: string;
@@ -17,6 +18,7 @@ type RoomParams = {
 
 export function AdminRoom() {
     const history = useHistory();
+    const { theme } = useTheme()
     const params = useParams<RoomParams>();
     const roomId = params.id;
     const { questions, title } = useRoom(roomId);
@@ -47,7 +49,7 @@ export function AdminRoom() {
     }
 
     return (
-        <div id="page-room">
+        <div id="page-room" className={theme}>
             <header>
                 <div className="content">
                     <img src={logoImg} alt="Letmeask" />

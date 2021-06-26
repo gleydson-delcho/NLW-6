@@ -2,6 +2,10 @@
     display: flex;
     align-items: stretch;
     height: 100vh;
+
+    &.dark {
+        background: #4d4d50;
+    }
 }
 
 aside {
@@ -56,6 +60,14 @@ main {
     
         align-items: stretch;
         text-align: center;
+
+        .button-theme {
+            display: flex;
+            justify-content: center;
+
+            margin-bottom: 2rem;
+
+        }
     
         > img {
             align-self: center;
