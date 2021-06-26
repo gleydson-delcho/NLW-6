@@ -34,6 +34,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 ## 💻 Projeto
 
 O Letmeask é uma aplicação de perguntas para ser utilizado durante lives, com várias funcionalidades como: classificação por like das perguntas, destaque da pergunta atualmente em resposta... entre outras.
+Se desejar você pode utilizar a aplicação através [desse link](https://letmeask-project-3c098.web.app/)
 
 ## 🔖 Layout
 
